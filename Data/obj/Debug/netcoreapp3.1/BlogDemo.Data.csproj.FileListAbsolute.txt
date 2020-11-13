@@ -1,0 +1,4 @@
+/Users/mvollstagg/Desktop/web/blogDemoCom/BlogDemo.Data/obj/Debug/netcoreapp3.1/BlogDemo.Data.csprojAssemblyReference.cache
+/Users/mvollstagg/Desktop/web/blogDemoCom/BlogDemo.Data/obj/Debug/netcoreapp3.1/BlogDemo.Data.AssemblyInfoInputs.cache
+/Users/mvollstagg/Desktop/web/blogDemoCom/BlogDemo.Data/obj/Debug/netcoreapp3.1/BlogDemo.Data.AssemblyInfo.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/BlogDemo.Data/obj/Debug/netcoreapp3.1/BlogDemo.Data.csproj.CoreCompileInputs.cache

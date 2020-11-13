@@ -25,7 +25,7 @@ namespace blogDemoCom.Web.Controllers
 
         public IActionResult Index(int page = 1)
         {
-            List<Post> posts = dbcontext.Post.ToList();
+            List<Post> posts = dbcontext.Post.OrderByDescending(x => x.CreateTime).ToList();
             PagedList<Post> postsPaged = new PagedList<Post>(posts.AsQueryable(), page, 5);            
             return View(postsPaged);
         }
@@ -36,6 +36,10 @@ namespace blogDemoCom.Web.Controllers
         }
 
         public IActionResult AddPost()
+        {
+            return View();
+        }
+        public IActionResult Search()
         {
             return View();
         }
@@ -98,10 +102,12 @@ namespace blogDemoCom.Web.Controllers
             }
         }
 
-        public IActionResult Test(int kontrol)
+        public IActionResult SearchPost(string searchText)
         {
-            if(kontrol == 1){
-                return Json(new { status = 1, title = "Başarılı", message = "Başarılı" }); 
+            if(searchText != null){
+                List<Post> posts = dbcontext.Post.Where(x => x.Title.Contains(searchText)).ToList();
+                PagedList<Post> postsPaged = new PagedList<Post>(posts.AsQueryable(), 1, 5); 
+                return RedirectToAction("Search",postsPaged); 
             }
             return Json(new { status = -1, title = "Başarısız", message = "Başarısız" }); 
         }

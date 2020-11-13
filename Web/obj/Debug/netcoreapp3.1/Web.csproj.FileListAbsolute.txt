@@ -80,3 +80,5 @@
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/PagedList.Core.dll
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/PagedList.Core.Mvc.dll
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Sidebar.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Header.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Search.cshtml.g.cs

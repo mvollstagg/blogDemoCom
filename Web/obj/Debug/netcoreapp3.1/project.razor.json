@@ -20654,8 +20654,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/_Header.cshtml",
+      "TargetPath": "Views\\Shared\\_Header.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Home/Register.cshtml",
       "TargetPath": "Views\\Home\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Home/Search.cshtml",
+      "TargetPath": "Views\\Home\\Search.cshtml",
       "FileKind": "mvc"
     },
     {

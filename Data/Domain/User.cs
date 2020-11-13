@@ -18,6 +18,6 @@ namespace Data.Domain
         public bool Status { get; set; }
         public virtual List<Post> Post { get; set; }
         [NotMapped]
-        public string FullName{get{return this.Name+this.LastName;} private set{}}
+        public string FullName{get{return this.Name+" "+this.LastName;} private set{}}
     }
 }

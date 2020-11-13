@@ -17,7 +17,7 @@ namespace Data.Mapping
 
         builder.HasOne(m => m.User)
            .WithMany(f => f.Post)
-           .HasForeignKey(x => x.AuthorId)
+           //.HasForeignKey(x => x.AuthorId)
            .OnDelete(DeleteBehavior.Restrict);
         }
     }

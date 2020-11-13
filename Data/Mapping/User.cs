@@ -14,6 +14,12 @@ namespace Data.Mapping
         builder.Property(o => o.Id).ValueGeneratedOnAdd();
         builder.Property(x => x.CreateTime).HasDefaultValue(DateTime.Now);
         builder.Property(x => x.Status).HasDefaultValue(true);
+
+        builder.HasMany(m => m.Post)
+           .WithOne(f => f.User)
+           //.HasForeignKey(x => x.AuthorId)
+           .OnDelete(DeleteBehavior.Restrict);
+        
         }
     }
 }

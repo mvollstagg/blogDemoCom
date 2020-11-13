@@ -75,3 +75,8 @@
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/Data.dll
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/Data.pdb
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Register.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/AddPost.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.MvcApplicationPartsAssemblyInfo.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/PagedList.Core.dll
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/PagedList.Core.Mvc.dll
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Sidebar.cshtml.g.cs

@@ -4,14 +4,16 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20201113153945_v3")]
+    partial class v3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +37,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 13, 20, 8, 0, 524, DateTimeKind.Local).AddTicks(760));
+                        .HasDefaultValue(new DateTime(2020, 11, 13, 18, 39, 44, 717, DateTimeKind.Local).AddTicks(460));
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -71,7 +73,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 13, 20, 8, 0, 595, DateTimeKind.Local).AddTicks(2500));
+                        .HasDefaultValue(new DateTime(2020, 11, 13, 18, 39, 44, 750, DateTimeKind.Local).AddTicks(3560));
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");

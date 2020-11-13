@@ -21,5 +21,10 @@ namespace Data.Services
                 return _Post;
             }
         }
+
+        public override IQueryable<Post> Include(Expression<Func<Post, bool>> Filter = null)
+        {
+            return base.Include(Filter);
+        }
     }
 }

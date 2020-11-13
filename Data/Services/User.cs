@@ -21,5 +21,17 @@ namespace Data.Services
                 return _User;
             }
         }
+        public override IQueryable<User> Include(Expression<Func<User, bool>> Filter = null)
+        {
+            return base.Include(Filter);
+        }
+        public User login(string eposta, string password)
+        {
+            Expression<Func<User, bool>> filter = f => f.Status & f.Email == eposta && f.Password == password;
+            var data = User.Where(filter).FirstOrDefault();
+            if (data != null)
+                return data;
+            return null;
+        }
     }
 }

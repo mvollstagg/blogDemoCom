@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lHklLM+I4r0ri0LQiqjM60I0YU93C01wceIn/0JigjtVeLf+QloXfIsM9B+Wf0uMc93WyU+VzL4s8Pt6MSx8JA==",
+  "dgSpecHash": "jpCRCMaVM0nAIzpGcymza5gvxm6H4Ejk5iZUSvzpYgAnD5MovTEfXQllhM7ScYwDS6ztnV2vCyeDxEaAktt59A==",
   "success": true,
   "projectFilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Web.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,8 @@
     "/Users/mvollstagg/.nuget/packages/microsoft.web.infrastructure/1.0.0/microsoft.web.infrastructure.1.0.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/pagedlist.core/1.17.4/pagedlist.core.1.17.4.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/pagedlist.core.mvc/3.0.0/pagedlist.core.mvc.3.0.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.4.0/runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -28,15 +28,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Kayıt Ol</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AddPost">Post Ekle</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <div class="row">
+                
+                    @RenderBody()
+                
+                    @Html.Partial("~/Views/Shared/_Sidebar.cshtml")
+                
+            </div>  
     </div>
 
     <footer class="border-top footer text-muted">

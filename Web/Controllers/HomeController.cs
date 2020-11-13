@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using blogDemoCom.Web.Models;
+using PagedList.Core;
 
 namespace blogDemoCom.Web.Controllers
 {
@@ -22,9 +23,11 @@ namespace blogDemoCom.Web.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View();
+            List<Post> posts = dbcontext.Post.ToList();
+            PagedList<Post> postsPaged = new PagedList<Post>(posts.AsQueryable(), page, 5);            
+            return View(postsPaged);
         }
 
         public IActionResult Register()
@@ -32,6 +35,10 @@ namespace blogDemoCom.Web.Controllers
             return View();
         }
 
+        public IActionResult AddPost()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -65,6 +72,32 @@ namespace blogDemoCom.Web.Controllers
             }
         }
 
+        [HttpPost]
+        public JsonResult AddPost(Post post, string validationcheck, string validation)
+        {
+            try
+            {                
+                if (String.IsNullOrEmpty(post.Title))
+                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Başlık Yazınız" });
+                if (String.IsNullOrEmpty(post.Content))
+                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen İçerik Yazınız" });
+                if (String.IsNullOrEmpty(post.Image))
+                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Fotoğraf Ekleyiniz" });
+                if (validationcheck != validation)
+                    return Json(new { status = -1, title = "Doğrulama Hatası", message = "Toplama İşlemi Hatalı" });
+                post.AuthorId = 1;
+                post.CreateTime = DateTime.Now;
+                post.Status = true;
+                dbcontext.Post.Add(post);
+                dbcontext.SaveChanges();
+                return Json(new { status = 1, title = "İşlem Başarılı", message = "Kullanıcı Başarılı Bir Şekilde Kayıt Oldu" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = -1, title = "Sistem Hatası", message = "Sistemde Bir Hata Meydana Geldi. Lütfen Daha Sonra Tekrar Deneyiniz : " + ex });
+            }
+        }
+
         public IActionResult Test(int kontrol)
         {
             if(kontrol == 1){
@@ -78,5 +111,10 @@ namespace blogDemoCom.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        #region ---------User Security
+       
+
+        
+        #endregion ----------User Security
     }
 }

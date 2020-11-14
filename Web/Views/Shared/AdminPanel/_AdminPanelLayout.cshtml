@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - blogDemoCom.AdminPanel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/adminStyle.css" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    
+</head>
+<body class="">
+    
+    <div id="container">
+        <div class="row sb-nav-fixed">
+            @Html.Partial("~/Views/Shared/AdminPanel/_Header.cshtml")
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-2">
+                @Html.Partial("~/Views/Shared/AdminPanel/_Sidebar.cshtml")
+            </div>
+            <div class="col-10">
+                @RenderBody()
+            </div>            
+        </div>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/adminJs.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+<script type="text/javascript">
+     function searchPost() {
+        var searchText = document.getElementById("searchText").value;
+        $.ajax({
+            url: '/Home/SearchPost',
+            data: { searchText: searchText },
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                console.log("başarıyla eklendi baba: " + data.message);
+            },
+            error: function (data) {
+
+            }
+        });
+     }
+     
+</script>

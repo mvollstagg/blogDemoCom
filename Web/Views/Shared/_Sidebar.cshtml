@@ -1,20 +1,22 @@
 ﻿ <div class="col-md-4">
- <!-- Search Widget -->
+ <!-- Search Widget -->    
     <div class="card my-4">
-        <h5 class="card-header">Search</h5>
+        <form action="/Home/Index" data-ajax-update="#userList" style="height:100%;" data-ajax="true" data-ajax-failure="error" data-ajax-method="GET" id="userforms" method="get">
+        <h5 class="card-header">Arama</h5>
         <div class="card-body">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." id="searchText">
+            <input type="text" class="form-control" placeholder="Etiket girin..." name="searchText" id="searchText">
             <span class="input-group-append">
-            <button class="btn btn-secondary" type="button" onclick="searchPost()">Go!</button>
+            <button class="btn btn-secondary" type="submit" >Ara!</button>
             </span>
         </div>
         </div>
+        </form>
     </div>
-
+    
     <!-- Categories Widget -->
     <div class="card my-4">
-        <h5 class="card-header">Categories</h5>
+        <h5 class="card-header">Kategoriler</h5>
         <div class="card-body">
         <div class="row">
             <div class="col-lg-6">
@@ -26,7 +28,7 @@
                 <a href="#">HTML</a>
                 </li>
                 <li>
-                <a href="#">Freebies</a>
+                <a href="#">Phyton</a>
                 </li>
             </ul>
             </div>
@@ -39,7 +41,7 @@
                 <a href="#">CSS</a>
                 </li>
                 <li>
-                <a href="#">Tutorials</a>
+                <a href="#">Delphi</a>
                 </li>
             </ul>
             </div>
@@ -51,7 +53,17 @@
     <div class="card my-4">
         <h5 class="card-header">Sosya Medya Hesapları</h5>
         <div class="card-body">
-        You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+        <ul class="list-unstyled mb-0">
+                <li>
+                <a href="#"><i class="fab fa-github"></i> Github Repo</a>
+                </li>
+                <li>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                </li>
+                <li>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </li>
+            </ul>
         </div>
     </div>
  </div>

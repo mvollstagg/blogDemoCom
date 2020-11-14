@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Vr15vLDl71fFda182qIiGKPCm+qMn6T1Jj5BEVbKl0wmXY5gy9Io/wP0UQzTobfl0Auzs1ZhlBvEv3MEcArnsw==",
+  "dgSpecHash": "ad/Mj1pT2TTcU7MPliTnEuG9fKbZoo6LiQBiuSrrwUcAd6ppip8NQTxV8OsVRTgppp5msANpuB7L9QcDDdw6qw==",
   "success": true,
   "projectFilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Data/Data.csproj",
   "expectedPackageFiles": [
@@ -96,8 +96,7 @@
     "/Users/mvollstagg/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/Users/mvollstagg/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/Users/mvollstagg/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "/Users/mvollstagg/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.8/microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512"
+    "/Users/mvollstagg/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": [
     {

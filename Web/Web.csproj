@@ -2,10 +2,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'blogDemoCom.Web' " />
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj"/>
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="PagedList.Core.Mvc" Version="3.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="PagedList.Core.Mvc" Version="3.0.0" />
   </ItemGroup>
 </Project>

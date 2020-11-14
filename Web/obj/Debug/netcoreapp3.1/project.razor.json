@@ -20654,8 +20654,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Home/Login.cshtml",
+      "TargetPath": "Views\\Home\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/_PostList.cshtml",
+      "TargetPath": "Views\\Shared\\_PostList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/_Header.cshtml",
       "TargetPath": "Views\\Shared\\_Header.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/AdminPanel/_AdminPanelLayout.cshtml",
+      "TargetPath": "Views\\Shared\\AdminPanel\\_AdminPanelLayout.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20684,8 +20699,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/AdminPanel/_Sidebar.cshtml",
+      "TargetPath": "Views\\Shared\\AdminPanel\\_Sidebar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/AdminPanel/_Header.cshtml",
+      "TargetPath": "Views\\Shared\\AdminPanel\\_Header.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/AdminPanel/_Footer.cshtml",
+      "TargetPath": "Views\\Shared\\AdminPanel\\_Footer.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20701,6 +20731,11 @@
     {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Home/AddPost.cshtml",
       "TargetPath": "Views\\Home\\AddPost.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/AdminPanel/Index.cshtml",
+      "TargetPath": "Views\\AdminPanel\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

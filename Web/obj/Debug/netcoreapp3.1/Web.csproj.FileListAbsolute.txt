@@ -33,7 +33,6 @@
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.pdb
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.genruntimeconfig.cache
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.csproj.CopyComplete
-/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/scopedcss/bundle/Web.styles.css
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/System.Web.Mvc.dll
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/System.Web.Razor.dll
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/System.Web.Helpers.dll
@@ -82,3 +81,11 @@
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Sidebar.cshtml.g.cs
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Header.cshtml.g.cs
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Search.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_PostList.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/Index.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_AdminPanelLayout.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Sidebar.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Header.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Footer.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Login.cshtml.g.cs

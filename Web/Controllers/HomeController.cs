@@ -45,6 +45,11 @@ namespace blogDemoCom.Web.Controllers
         {
             return View();
         }
+        public IActionResult Post(int Id)
+        {
+            Post post = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
+            return View(post);
+        }
         [HttpGet]
         public IActionResult Login()
         {

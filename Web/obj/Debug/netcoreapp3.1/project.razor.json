@@ -20729,6 +20729,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Home/Post.cshtml",
+      "TargetPath": "Views\\Home\\Post.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Home/AddPost.cshtml",
       "TargetPath": "Views\\Home\\AddPost.cshtml",
       "FileKind": "mvc"

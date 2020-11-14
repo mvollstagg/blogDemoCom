@@ -89,3 +89,4 @@
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Header.cshtml.g.cs
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Footer.cshtml.g.cs
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Login.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Post.cshtml.g.cs

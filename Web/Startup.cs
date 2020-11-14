@@ -56,8 +56,15 @@ namespace blogDemoCom.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                 name: "PostGoruntuleme",
+                 pattern: "Home/Post/{id}",
+                 defaults: new { controller = "Home", action = "Post" });
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                
             });
         }
     }

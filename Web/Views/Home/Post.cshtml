@@ -11,7 +11,7 @@
     <hr>
     <p>Yayın Tarihi: @Model.CreateTime</p>
     <hr>
-    <img class="img-fluid rounded" src="http://@Model.Image" alt="">
+    <img class="img-fluid rounded" src="~/postImages/@(Model.Image)" alt="">
     <hr>   
         @Html.Raw(Model.Content)
     <hr>

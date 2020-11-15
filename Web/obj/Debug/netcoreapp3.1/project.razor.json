@@ -20694,6 +20694,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/AdminPanel/PostAdd.cshtml",
+      "TargetPath": "Views\\AdminPanel\\PostAdd.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/_Sidebar.cshtml",
       "TargetPath": "Views\\Shared\\_Sidebar.cshtml",
       "FileKind": "mvc"

@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -30,7 +32,7 @@ namespace blogDemoCom.Web.Controllers
         
         public IActionResult Index(string searchText = "", int page = 1)
         {
-            List<Post> posts = dbcontext.Post.OrderByDescending(x => x.CreateTime).ToList(); 
+            List<Post> posts = dbcontext.Post.Where(x => x.Status == true).OrderByDescending(x => x.CreateTime).ToList(); 
             User user = GetUser();
             ViewBag.Name = user.FullName;
             if(!String.IsNullOrEmpty(searchText)){
@@ -46,6 +48,13 @@ namespace blogDemoCom.Web.Controllers
             User user = GetUser(); 
             ViewBag.Name = user.FullName;           
             return View(user);
+        }
+
+        public IActionResult PostAdd()
+        {
+            User user = GetUser(); 
+            ViewBag.Name = user.FullName;           
+            return View();
         }
 
         public IActionResult PostSettings(int page = 1)
@@ -78,22 +87,69 @@ namespace blogDemoCom.Web.Controllers
             return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!" });
         }
 
-        
+        [HttpPost]
+        public async Task<IActionResult> PostEkle(IFormFile File, string Title, string Content)
+        {      
+            if(File != null){                  
+                Post post = new Post()
+                {
+                    Title = Title,
+                    Content = Content,
+                    AuthorId = GetUser().Id
+                };  
+                string filename = "";
+                filename = Guid.NewGuid().ToString() + "-" + post.Id + ".png";  
+                post.Image = filename;                 
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/postImages", filename);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await File.CopyToAsync(stream);
+                }
+
+                dbcontext.Add(post);
+                dbcontext.SaveChanges();        
+                return Redirect("/AdminPanel/PostSettings");
+            }
+            return null;            
+        }        
         public IActionResult PostEdit(int Id){
+            User user = GetUser();
+            ViewBag.Name = user.FullName; 
             Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
             return View(postUpdate);
         }
-        [HttpPost]
-        public JsonResult PostGuncelle(int Id, string Title, string Content, string Image)
-        {
-            Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
+        [HttpPost("FileUpload")]
+        public async Task<IActionResult> PostGuncelle(IFormFile File, int Id, string Title, string Content)
+        {                       
+            Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();            
+            string filename = "";
+            filename = Guid.NewGuid().ToString() + "-" + Id + ".png";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/postImages", filename);
+            if(File != null){
+                postUpdate.Image = filename;
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await File.CopyToAsync(stream);
+                }
+            }
+            
             postUpdate.Title = Title;
             postUpdate.Content = Content;
-            postUpdate.Image = Image;
+            postUpdate.UpdateTime = DateTime.Now;            
             dbcontext.Update(postUpdate);
             dbcontext.SaveChanges();        
-            return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!" });
-        }
+            return Redirect("/AdminPanel/PostSettings");
+        }        
+
+        public ActionResult PostStatusToggle(int Id)
+        {
+            Post post = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
+            post.Status = !post.Status;
+            dbcontext.Update(post);
+            dbcontext.SaveChanges(); 
+            return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!", postStatus = post.Status });
+        } 
         public ActionResult Cikis()
         {
             HttpContext.SignOutAsync();

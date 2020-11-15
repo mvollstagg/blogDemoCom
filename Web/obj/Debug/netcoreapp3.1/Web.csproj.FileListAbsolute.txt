@@ -93,3 +93,4 @@
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/Settings.cshtml.g.cs
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/PostSettings.cshtml.g.cs
 /Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/PostEdit.cshtml.g.cs
+/Users/mvollstagg/Desktop/web/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/PostAdd.cshtml.g.cs

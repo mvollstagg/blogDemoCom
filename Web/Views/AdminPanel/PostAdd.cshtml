@@ -20,23 +20,21 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <form method="POST" enctype="multipart/form-data" asp-controller="AdminPanel" asp-action="PostGuncelle" >
+                    <form method="POST" enctype="multipart/form-data" asp-controller="AdminPanel" asp-action="PostEkle" >
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Postu Güncelle</h3></div>
-                        <div class="card-body">
-                            <input class="form-control py-4" name="Id" id="Id" type="text" value="@Model.Id" style="display:none;"/>
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Yeni Post Ekle!</h3></div>
+                        <div class="card-body">                            
                             <div class="form-row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputFirstName">Post Başlığı</label>
-                                        <input class="form-control py-4" name="Title" id="Title" type="text" value="@Model.Title" />
+                                        <input class="form-control py-4" name="Title" id="Title" type="text" />
                                     </div>
                                 </div>                                
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">İçerik</label>
-                                <textarea name="Content" hidden class="someDummyClassName"></textarea>
-                                <div class="form-control summernote">@Html.Raw(Model.Content)</div>
+                                @Html.TextAreaFor(Model => Model.Content, new { @class = "form-control", id = "summernote", name = "Content"})
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
@@ -50,7 +48,7 @@
                                     </div>
                                 </div>                                    
                             </div>
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block" type="submit" value="Upload" >Güncelle</button></div>                        
+                            <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block" type="submit" value="Upload" >Post Ekle!</button></div>                        
                         </div>                        
                     </div>
                     </form>
@@ -67,56 +65,20 @@
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);  
     });  
 
-    $(document).ready(function () {
-        $('.summernote').on('summernote.init', function () {
-            $('textarea.someDummyClassName').html($('.summernote').summernote("code"))
-        }).on("summernote.blur", function () {
-            $('textarea.someDummyClassName').html($('.summernote').summernote("code"))
-        }).summernote({
-            height: 300,
-            tabsize: 2,
-            disableDragAndDrop: true,
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-            });
+    $(document).ready(function() {
+       $('#summernote').summernote({        
+        tabsize: 2,
+        height: 300,
+        disableDragAndDrop: true,
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
+      });
     });
-
-     function postGuncelle() {
-        var id = document.getElementById("Id").value;
-        var title = document.getElementById("Title").value;
-        var content = $('#summernote').summernote('code');
-        var image = "placehold.it/750x300";
-        $.ajax({
-            url: '/AdminPanel/PostGuncelle',
-            data: { Id: id, Title: title, Content: content, Image: image },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Başarılı!',
-                    text: 'Ayarlarınız güncellendi!',
-                    customClass: 'swal-resetPassword',
-                    showConfirmButton: false,
-                    timer: 5000
-                })
-                location.replace("/AdminPanel/PostSettings")
-            },
-            error: function (data) {
-                Swal.fire(
-                'Sistem Hatası!',
-                'Lütfen daha sonra tekrar deneyin!',
-                'error'
-                )
-            }
-        });
-     }
-     
 </script>

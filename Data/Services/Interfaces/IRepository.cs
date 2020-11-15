@@ -10,7 +10,7 @@ namespace Data.Services.Interfaces
     {
         T Find(object id);
         IQueryable<T> Where(Expression<Func<T, bool>> Filter = null);
-        //IEnumerable<T> Include(Expression<Func<T, bool>> Filter = null);
+        IQueryable<T> Include(Expression<Func<T, bool>> Filter = null);
         bool RemoveById(object id);
         bool Remove(T entity);
         int Remove(Expression<Func<T, bool>> Filter = null);
@@ -21,6 +21,6 @@ namespace Data.Services.Interfaces
         bool Add(T entity, Expression<Func<T, bool>> InsertControl = null);
         List<T> ToList();
         int CountByWhere(Expression<Func<T, bool>> Filter = null);
-        T FirstOrDefault(Expression<Func<T, bool>> Filter = null);
+        T FirstOrDefault(Expression<Func<T, bool>> Filter = null);        
     }
 }

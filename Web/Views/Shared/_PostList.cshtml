@@ -11,10 +11,10 @@
   @foreach (var item in Model)
   {                                   
     <div class="card mb-4">
-      <img height="300px" width="750px" class="card-img-top" src="http://@item.Image" alt="Card image cap">
+      <img height="300px" width="750px" class="card-img-top" src="~/postImages/@(item.Image)" alt="Card image cap">
       <div class="card-body">
         <h2 class="card-title">@item.Title</h2>
-        <p class="card-text">@item.Content</p>
+        <p class="card-text">@Html.Raw(item.Content)</p>
         <a href="/Home/Post/@item.Id" class="btn btn-primary">Postu Oku! &rarr;</a>
       </div>
       <div class="card-footer text-muted">

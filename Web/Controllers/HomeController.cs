@@ -30,8 +30,7 @@ namespace blogDemoCom.Web.Controllers
         
         public IActionResult Index(string searchText = "", int page = 1)
         {
-            List<Post> posts = dbcontext.Post.OrderByDescending(x => x.CreateTime).ToList(); 
-            
+            List<Post> posts = dbcontext.Post.Where(x => x.Status == true).OrderByDescending(x => x.CreateTime).ToList();
             if(!String.IsNullOrEmpty(searchText)){
                 posts = dbcontext.Post.Where(x => x.Title.Contains(searchText) || x.Content.Contains(searchText)).OrderByDescending(x => x.CreateTime).ToList();                
             }

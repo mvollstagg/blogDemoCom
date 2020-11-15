@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Data.Base;
+using System.Web.Mvc;
 namespace Data.Domain
 {
     public class Post : IBaseEntity
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        [AllowHtml]
         public string Content { get; set; }
         public string Image { get; set; }
         public DateTime CreateTime { get; set; }

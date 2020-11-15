@@ -43,9 +43,20 @@ namespace blogDemoCom.Web.Controllers
         }
         public IActionResult Settings()
         {
-            User user = GetUser();            
+            User user = GetUser(); 
+            ViewBag.Name = user.FullName;           
             return View(user);
         }
+
+        public IActionResult PostSettings(int page = 1)
+        {           
+            User user = GetUser();
+            ViewBag.Name = user.FullName;
+            List<Post> posts = dbcontext.Post.OrderByDescending(x => x.CreateTime).ToList();
+            PagedList<Post> postsPaged = new PagedList<Post>(posts.AsQueryable(), page, 25);
+            return View(postsPaged);
+        }
+
         [HttpPost]
         public JsonResult Guncelle(string Name, string LastName, string Email, string Password, int Id)
         {
@@ -54,6 +65,32 @@ namespace blogDemoCom.Web.Controllers
             userUpdate.LastName = LastName;
             userUpdate.Email = Email;
             userUpdate.Password = Password;
+            dbcontext.SaveChanges();        
+            return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!" });
+        }
+
+        [HttpPost]
+        public JsonResult PostSil(int Id)
+        {
+            Post postDelete = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
+            dbcontext.Remove(postDelete);
+            dbcontext.SaveChanges();        
+            return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!" });
+        }
+
+        
+        public IActionResult PostEdit(int Id){
+            Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
+            return View(postUpdate);
+        }
+        [HttpPost]
+        public JsonResult PostGuncelle(int Id, string Title, string Content, string Image)
+        {
+            Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
+            postUpdate.Title = Title;
+            postUpdate.Content = Content;
+            postUpdate.Image = Image;
+            dbcontext.Update(postUpdate);
             dbcontext.SaveChanges();        
             return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!" });
         }

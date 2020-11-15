@@ -20704,6 +20704,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/AdminPanel/PostSettings.cshtml",
+      "TargetPath": "Views\\AdminPanel\\PostSettings.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/AdminPanel/_Sidebar.cshtml",
       "TargetPath": "Views\\Shared\\AdminPanel\\_Sidebar.cshtml",
       "FileKind": "mvc"
@@ -20726,6 +20731,11 @@
     {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/AdminPanel/PostEdit.cshtml",
+      "TargetPath": "Views\\AdminPanel\\PostEdit.cshtml",
       "FileKind": "mvc"
     },
     {

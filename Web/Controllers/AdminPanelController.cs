@@ -41,7 +41,22 @@ namespace blogDemoCom.Web.Controllers
                 return PartialView("~/Views/Shared/_PostList.cshtml", postsPaged);
             return View(postsPaged);
         }
-
+        public IActionResult Settings()
+        {
+            User user = GetUser();            
+            return View(user);
+        }
+        [HttpPost]
+        public JsonResult Guncelle(string Name, string LastName, string Email, string Password, int Id)
+        {
+            User userUpdate = dbcontext.User.Where(x => x.Id == Id).FirstOrDefault(); 
+            userUpdate.Name = Name;
+            userUpdate.LastName = LastName;
+            userUpdate.Email = Email;
+            userUpdate.Password = Password;
+            dbcontext.SaveChanges();        
+            return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!" });
+        }
         public ActionResult Cikis()
         {
             HttpContext.SignOutAsync();

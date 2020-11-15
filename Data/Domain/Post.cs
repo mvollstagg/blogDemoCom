@@ -13,7 +13,8 @@ namespace Data.Domain
         public DateTime CreateTime { get; set; }
         public DateTime UpdateTime { get; set; }
         public bool Status { get; set; }
-        public int AuthorId { get; set; }        
+        public int AuthorId { get; set; }  
+        public string CategoryName { get; set; }      
         public virtual User User { get; set; }
     }
 }

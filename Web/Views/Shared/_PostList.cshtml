@@ -11,7 +11,7 @@
   @foreach (var item in Model)
   {                                   
     <div class="card mb-4">
-      <img class="card-img-top" src="http://@item.Image" alt="Card image cap">
+      <img height="300px" width="750px" class="card-img-top" src="http://@item.Image" alt="Card image cap">
       <div class="card-body">
         <h2 class="card-title">@item.Title</h2>
         <p class="card-text">@item.Content</p>
@@ -29,7 +29,6 @@
   <div class="row">
     <div class="col-xs-12 sayfalama">
         <div class="sayfalama-bilgi">Toplam <span>@Model.TotalItemCount</span> Kayıt Bulunuyor. Şu anda <span>@Model.FirstItemOnPage</span> - <span>@Model.LastItemOnPage</span> Arasındaki Kayıtlar Gösteriliyor. </div>
-
         <pager list="@Model" asp-controller="Home" options="@PagedList.Core.Mvc.PagedListRenderOptions.Bootstrap4PageNumbersOnly" asp-action="Index" />
     </div>
   </div>

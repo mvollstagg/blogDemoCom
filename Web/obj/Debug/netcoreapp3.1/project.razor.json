@@ -20669,6 +20669,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/AdminPanel/Settings.cshtml",
+      "TargetPath": "Views\\AdminPanel\\Settings.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Web/Views/Shared/AdminPanel/_AdminPanelLayout.cshtml",
       "TargetPath": "Views\\Shared\\AdminPanel\\_AdminPanelLayout.cshtml",
       "FileKind": "mvc"

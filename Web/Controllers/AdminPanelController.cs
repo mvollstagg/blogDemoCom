@@ -19,7 +19,7 @@ using System.Security.Claims;
 
 namespace blogDemoCom.Web.Controllers
 {
-    [Authorize(Roles = ("Admin"))]
+    // [Authorize(Roles = ("Admin"))]
     public class AdminPanelController : Controller
     {
         private DataContext dbcontext = new DataContext();

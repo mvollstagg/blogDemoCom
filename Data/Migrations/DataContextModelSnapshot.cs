@@ -38,7 +38,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 15, 6, 6, 55, 673, DateTimeKind.Local).AddTicks(6390));
+                        .HasDefaultValue(new DateTime(2021, 11, 30, 20, 57, 20, 63, DateTimeKind.Local).AddTicks(1930));
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -74,7 +74,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 15, 6, 6, 55, 714, DateTimeKind.Local).AddTicks(4570));
+                        .HasDefaultValue(new DateTime(2021, 11, 30, 20, 57, 20, 92, DateTimeKind.Local).AddTicks(1970));
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -99,6 +99,19 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User","dbo");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "123",
+                            LastName = "Admin",
+                            Name = "Admin",
+                            Password = "123",
+                            Role = "Admin",
+                            Status = false
+                        });
                 });
 
             modelBuilder.Entity("Data.Domain.Post", b =>

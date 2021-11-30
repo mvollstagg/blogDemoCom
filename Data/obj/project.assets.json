@@ -5149,23 +5149,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/mvollstagg/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/matthieuvollstagg/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mvollstagg/Desktop/web/blogDemoCom/Data/Data.csproj",
+      "projectUniqueName": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/Data.csproj",
       "projectName": "Data",
-      "projectPath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Data/Data.csproj",
-      "packagesPath": "/Users/mvollstagg/.nuget/packages/",
-      "outputPath": "/Users/mvollstagg/Desktop/web/blogDemoCom/Data/obj/",
+      "projectPath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/Data.csproj",
+      "packagesPath": "/Users/matthieuvollstagg/.nuget/packages/",
+      "outputPath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/mvollstagg/.nuget/NuGet/NuGet.Config"
+        "/Users/matthieuvollstagg/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5175,6 +5171,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5186,6 +5183,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNet.Mvc": {
             "target": "Package",
@@ -5231,7 +5229,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
       }
     }
   },

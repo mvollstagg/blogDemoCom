@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201113153945_v3")]
-    partial class v3
+    [Migration("20211130195720_Initial_v1")]
+    partial class Initial_v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,13 +31,16 @@ namespace Data.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 13, 18, 39, 44, 717, DateTimeKind.Local).AddTicks(460));
+                        .HasDefaultValue(new DateTime(2021, 11, 30, 20, 57, 20, 63, DateTimeKind.Local).AddTicks(1930));
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -73,7 +76,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 13, 18, 39, 44, 750, DateTimeKind.Local).AddTicks(3560));
+                        .HasDefaultValue(new DateTime(2021, 11, 30, 20, 57, 20, 92, DateTimeKind.Local).AddTicks(1970));
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -98,6 +101,19 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User","dbo");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "123",
+                            LastName = "Admin",
+                            Name = "Admin",
+                            Password = "123",
+                            Role = "Admin",
+                            Status = false
+                        });
                 });
 
             modelBuilder.Entity("Data.Domain.Post", b =>

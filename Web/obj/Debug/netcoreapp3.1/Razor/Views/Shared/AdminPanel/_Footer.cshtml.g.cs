@@ -26,8 +26,15 @@ using blogDemoCom.Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/_ViewImports.cshtml"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e899955de029857cf1d5e84cb96d40bba99b5241", @"/Views/Shared/AdminPanel/_Footer.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bb9d57a9360343ebb2a5271d431bb122f4fd97e9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ad6c6158b679fa1218375cf7261dc10e2311e981", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_AdminPanel__Footer : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

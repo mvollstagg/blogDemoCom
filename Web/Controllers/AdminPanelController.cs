@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using blogDemoCom.Web.Models;
-using PagedList.Core;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
@@ -19,7 +19,7 @@ using System.Security.Claims;
 
 namespace blogDemoCom.Web.Controllers
 {
-    // [Authorize(Roles = ("Admin"))]
+    [Authorize(Roles = ("Admin"))]
     public class AdminPanelController : Controller
     {
         private DataContext dbcontext = new DataContext();
@@ -38,10 +38,10 @@ namespace blogDemoCom.Web.Controllers
             if(!String.IsNullOrEmpty(searchText)){
                 posts = dbcontext.Post.Where(x => x.Title.Contains(searchText) || x.Content.Contains(searchText)).OrderByDescending(x => x.CreateTime).ToList();                
             }
-            PagedList<Post> postsPaged = new PagedList<Post>(posts.AsQueryable(), page, 5); 
+            
             if (IsAjaxRequest(Request))
-                return PartialView("~/Views/Shared/_PostList.cshtml", postsPaged);
-            return View(postsPaged);
+                return PartialView("~/Views/Shared/_PostList.cshtml", posts);
+            return View(posts);
         }
         public IActionResult Settings()
         {
@@ -62,8 +62,7 @@ namespace blogDemoCom.Web.Controllers
             User user = GetUser();
             ViewBag.Name = user.FullName;
             List<Post> posts = dbcontext.Post.OrderByDescending(x => x.CreateTime).ToList();
-            PagedList<Post> postsPaged = new PagedList<Post>(posts.AsQueryable(), page, 25);
-            return View(postsPaged);
+            return View(posts);
         }
 
         [HttpPost]
@@ -79,7 +78,7 @@ namespace blogDemoCom.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult PostSil(int Id)
+        public JsonResult PostDelete(int Id)
         {
             Post postDelete = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
             dbcontext.Remove(postDelete);
@@ -88,60 +87,80 @@ namespace blogDemoCom.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostEkle(IFormFile File, string Title, string Content)
-        {      
-            if(File != null){                  
-                Post post = new Post()
-                {
-                    Title = Title,
-                    Content = Content,
-                    AuthorId = GetUser().Id
-                };  
-                string filename = "";
-                filename = Guid.NewGuid().ToString() + "-" + post.Id + ".png";  
-                post.Image = filename;                 
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/postImages", filename);
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> PostAdd(Post postVM, IFormFile file)
+        {
+            try
+            {
+                if(file != null)
+                {                  
+                    Post post = new Post()
+                    {
+                        Title = postVM.Title,
+                        Content = postVM.Content,
+                        AuthorName = postVM.AuthorName
+                    };  
+                    string filename = "";
+                    filename = Guid.NewGuid().ToString() + "-" + post.Id + ".png";  
+                    post.Image = filename;                 
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/postImages", filename);
 
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await File.CopyToAsync(stream);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    dbcontext.Add(post);
+                    dbcontext.SaveChanges();        
+                    return RedirectToAction(nameof(AdminPanelController.PostSettings));
                 }
-
-                dbcontext.Add(post);
-                dbcontext.SaveChanges();        
-                return Redirect("/AdminPanel/PostSettings");
+                return RedirectToAction(nameof(AdminPanelController.PostSettings));
+                
             }
-            return null;            
-        }        
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Beklenmedik Hata: {ex.Message}";
+            }
+            return View(postVM);
+        }
+
         public IActionResult PostEdit(int Id){
             User user = GetUser();
             ViewBag.Name = user.FullName; 
             Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
             return View(postUpdate);
         }
-        [HttpPost("FileUpload")]
-        public async Task<IActionResult> PostGuncelle(IFormFile File, int Id, string Title, string Content)
-        {                       
-            Post postUpdate = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();            
-            string filename = "";
-            filename = Guid.NewGuid().ToString() + "-" + Id + ".png";
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/postImages", filename);
-            if(File != null){
-                postUpdate.Image = filename;
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await File.CopyToAsync(stream);
-                }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> PostEdit(Post postVM, IFormFile file)
+        {
+            try
+            {
+                Post postUpdate = dbcontext.Post.Where(x => x.Id == postVM.Id).FirstOrDefault();            
+                string filename = "";
+                filename = Guid.NewGuid().ToString() + "-" + postVM.Id + ".png";
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/postImages", filename);
+                if(file != null){
+                    postUpdate.Image = filename;
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                }                
+                postUpdate.Title = postVM.Title;
+                postUpdate.Content = postVM.Content;
+                postUpdate.UpdateTime = DateTime.Now;  
+                postUpdate.AuthorName = postVM.AuthorName;          
+                dbcontext.Update(postUpdate);
+                dbcontext.SaveChanges();
+                return RedirectToAction(nameof(AdminPanelController.PostSettings));                
             }
-            
-            postUpdate.Title = Title;
-            postUpdate.Content = Content;
-            postUpdate.UpdateTime = DateTime.Now;            
-            dbcontext.Update(postUpdate);
-            dbcontext.SaveChanges();        
-            return Redirect("/AdminPanel/PostSettings");
-        }        
-
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Beklenmedik Hata: {ex.Message}";
+            }
+            return View(postVM);
+        }
         public ActionResult PostStatusToggle(int Id)
         {
             Post post = dbcontext.Post.Where(x => x.Id == Id).FirstOrDefault();
@@ -150,72 +169,12 @@ namespace blogDemoCom.Web.Controllers
             dbcontext.SaveChanges(); 
             return Json(new { status = 1, title = "İşlem Başarılı", message = "Ayarlarınız güncellendi!", postStatus = post.Status });
         } 
-        public ActionResult Cikis()
+        public ActionResult Logout()
         {
             HttpContext.SignOutAsync();
             return Redirect("/Home/Index");
         }        
 
-        [HttpPost]
-        public JsonResult CreateUser(User user, string validationcheck, string validation)
-        {
-            try
-            {                
-                if (String.IsNullOrEmpty(user.Name))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen İsim Yazınız" });
-                if (String.IsNullOrEmpty(user.LastName))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Soyisim Yazınız" });
-                if (String.IsNullOrEmpty(user.Email))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Email Yazınız" });
-                if (String.IsNullOrEmpty(user.Password))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Şifre Yazınız" });
-                if (validationcheck != validation)
-                    return Json(new { status = -1, title = "Doğrulama Hatası", message = "Toplama İşlemi Hatalı" });
-                user.Role = "Admin";
-                user.CreateTime = DateTime.Now;
-                user.Status = true;
-                dbcontext.User.Add(user);
-                dbcontext.SaveChanges();
-                return Json(new { status = 1, title = "İşlem Başarılı", message = "Kullanıcı Başarılı Bir Şekilde Kayıt Oldu" });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { status = -1, title = "Sistem Hatası", message = "Sistemde Bir Hata Meydana Geldi. Lütfen Daha Sonra Tekrar Deneyiniz : " + ex });
-            }
-        }
-
-        [HttpPost]
-        public JsonResult AddPost(Post post, string validationcheck, string validation)
-        {
-            try
-            {                
-                if (String.IsNullOrEmpty(post.Title))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Başlık Yazınız" });
-                if (String.IsNullOrEmpty(post.Content))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen İçerik Yazınız" });
-                if (String.IsNullOrEmpty(post.Image))
-                    return Json(new { status = -1, title = "Bilgi Eksik", message = "Lütfen Fotoğraf Ekleyiniz" });
-                if (validationcheck != validation)
-                    return Json(new { status = -1, title = "Doğrulama Hatası", message = "Toplama İşlemi Hatalı" });
-                post.AuthorId = 1;
-                post.CreateTime = DateTime.Now;
-                post.Status = true;
-                dbcontext.Post.Add(post);
-                dbcontext.SaveChanges();
-                return Json(new { status = 1, title = "İşlem Başarılı", message = "Kullanıcı Başarılı Bir Şekilde Kayıt Oldu" });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { status = -1, title = "Sistem Hatası", message = "Sistemde Bir Hata Meydana Geldi. Lütfen Daha Sonra Tekrar Deneyiniz : " + ex });
-            }
-        }
-
-        
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
         #region ---------User Security
         public User GetUser()
         {

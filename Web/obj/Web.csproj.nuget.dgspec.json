@@ -127,10 +127,6 @@
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "PagedList.Core.Mvc": {
-              "target": "Package",
-              "version": "[3.0.0, )"
             }
           },
           "imports": [

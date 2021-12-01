@@ -5,118 +5,104 @@
     Layout = "~/Views/Shared/AdminPanel/_AdminPanelLayout.cshtml";
     ViewData["Title"] = "Home Page";
 }
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" href="~/css/dropzone.css" />
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
-<div id="layoutAuthentication_content">
-    <main>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <form method="POST" enctype="multipart/form-data" asp-controller="AdminPanel" asp-action="PostGuncelle" >
-                    <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Postu Güncelle</h3></div>
-                        <div class="card-body">
-                            <input class="form-control py-4" name="Id" id="Id" type="text" value="@Model.Id" style="display:none;"/>
-                            <div class="form-row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputFirstName">Post Başlığı</label>
-                                        <input class="form-control py-4" name="Title" id="Title" type="text" value="@Model.Title" />
-                                    </div>
-                                </div>                                
-                            </div>
-                            <div class="form-group">
-                                <label class="small mb-1" for="inputEmailAddress">İçerik</label>
-                                <textarea name="Content" hidden class="someDummyClassName"></textarea>
-                                <div class="form-control summernote">@Html.Raw(Model.Content)</div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="Image">Fotoğraf</label> 
-                                        <div class="custom-file">  
-                                            <input type="file" class="custom-file-input" name="File" >  
-                                            <label class="custom-file-label" for="File">Dosya seç</label>  
-                                        </div>  
-                                        <span asp-validation-for="Image" class="text-danger"></span>                                          
-                                    </div>
-                                </div>                                    
-                            </div>
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block" type="submit" value="Upload" >Güncelle</button></div>                        
-                        </div>                        
-                    </div>
-                    </form>
+<header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <div class="container-xl px-4">
+        <div class="page-header-content pt-4">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-auto mt-4">
+                    <h1 class="page-header-title">
+                        <span class="page-header-icon"><i data-feather="edit-3"></i></span>
+                        Post Güncelle
+                    </h1>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</header>
+<div class="container-xl px-4 mt-n10">
+    <form id="fromloading" enctype="multipart/form-data" asp-action="PostEdit" asp-antiforgery="true">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div class="card-header">Sabit Alanlar</div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label class="form-label" asp-for="AuthorName">Yazar</label>
+                            <input type="text" class="form-control" asp-for="AuthorName">
+                            <span class="text-danger" asp-validation-for="AuthorName"></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label" asp-for="Title">Başlık</label>
+                            <input type="text" class="form-control" asp-for="Title">
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label" asp-for="Content">Açıklama</label>
+                            <textarea class="form-control editor" asp-for="Content" rows="5" cols="5"></textarea>
+                            <span class="text-danger" asp-validation-for="Content"></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="file" class="form-label">Görsel</label>
+                            @if (Model != null)
+                            {
+                                if (Model.Image != null)
+                                {
+                                    <div class="my-2">
+                                        <img class="img-account-profile rounded-1 border border-dark" src="~/postImages/@(Model.Image)">
+                                    </div>
+                                }
+                            }
+                            <input class="form-control" type="file" name="file" id="file">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label mb-1" for="switchOne">Durumu</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="switchOne" checked asp-for="Status">
+                                <label class="form-check-label" for="switchOne"></label>
+                            </div>
+                            <span class="text-danger" asp-validation-for="Status"></span>
+                        </div>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="Image" />
+                        <div class="bn">
+                            <button type="submit" class="btn  btn-primary">Kaydet</button>
+                            <a asp-action="PostSettings" class="btn  btn-dark">Vazgeç</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/jquery/dist/dropzone.js"></script>
-<script type="text/javascript">
-    $(".custom-file-input").on("change", function () {  
-        var fileName = $(this).val().split("\\").pop();  
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);  
-    });  
 
-    $(document).ready(function () {
-        $('.summernote').on('summernote.init', function () {
-            $('textarea.someDummyClassName').html($('.summernote').summernote("code"))
-        }).on("summernote.blur", function () {
-            $('textarea.someDummyClassName').html($('.summernote').summernote("code"))
-        }).summernote({
-            height: 300,
-            tabsize: 2,
-            disableDragAndDrop: true,
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-            });
-    });
+@section Validation{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-     function postGuncelle() {
-        var id = document.getElementById("Id").value;
-        var title = document.getElementById("Title").value;
-        var content = $('#summernote').summernote('code');
-        var image = "placehold.it/750x300";
-        $.ajax({
-            url: '/AdminPanel/PostGuncelle',
-            data: { Id: id, Title: title, Content: content, Image: image },
-            type: 'post',
-            dataType: 'json',
-            success: function (data) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Başarılı!',
-                    text: 'Ayarlarınız güncellendi!',
-                    customClass: 'swal-resetPassword',
-                    showConfirmButton: false,
-                    timer: 5000
-                })
-                location.replace("/AdminPanel/PostSettings")
-            },
-            error: function (data) {
-                Swal.fire(
-                'Sistem Hatası!',
-                'Lütfen daha sonra tekrar deneyin!',
-                'error'
-                )
-            }
+}
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+    <script>
+        var allEditors = document.querySelectorAll('.editor');
+        for (var i = 0; i < allEditors.length; ++i) {
+            ClassicEditor
+                .create(allEditors[i])
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    </script>
+    <script>
+        $(document).on("submit", "#fromloading", function () {
+            $(this).find('button[type="submit"]')
+            $(this).find('button[type="submit"]').attr("disabled", "true");
+            $(this).find('button[type="submit"]').html('');
+            $(this).find('button[type="submit"]').append('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Kaydet...')
+            setTimeout(() => {
+                $(this).find('.spinner-border').remove();
+                $(this).find('button[type="submit"]').append('Kaydet');
+                $(this).find('button[type="submit"]').attr("disabled", "false");
+            }, 2000);
         });
-     }
-     
-</script>
+    </script>
+}

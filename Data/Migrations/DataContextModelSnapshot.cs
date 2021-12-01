@@ -26,10 +26,7 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CategoryName")
+                    b.Property<string>("AuthorName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
@@ -38,7 +35,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 11, 30, 20, 57, 20, 63, DateTimeKind.Local).AddTicks(1930));
+                        .HasDefaultValue(new DateTime(2021, 12, 1, 22, 10, 52, 119, DateTimeKind.Local).AddTicks(8270));
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -74,7 +71,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 11, 30, 20, 57, 20, 92, DateTimeKind.Local).AddTicks(1970));
+                        .HasDefaultValue(new DateTime(2021, 12, 1, 22, 10, 52, 160, DateTimeKind.Local).AddTicks(8030));
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");

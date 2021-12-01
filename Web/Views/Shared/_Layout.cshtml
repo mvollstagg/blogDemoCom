@@ -1,36 +1,55 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - blogDemoCom.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/blog-home.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <meta charset="utf-8">
+	<title>I&Others Blog Demo</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="~/css/base.css">
+	<link rel="stylesheet" href="~/css/vendor.css">  
+	<link rel="stylesheet" href="~/css/main.css">
+	<script src="~/js/modernizr.js"></script>
+	<script src="~/js/pace.min.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body id="top">
     <header>
         @Html.Partial("~/Views/Shared/_Header.cshtml")
     </header>
-    <div class="container">
-            <div class="row">
-                
-                    @RenderBody()
-                
-                    @Html.Partial("~/Views/Shared/_Sidebar.cshtml")
-                
-            </div>  
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - blogDemoCom.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderBody()
+
+
+    <footer>
+      <div class="footer-bottom">
+      	<div class="row">
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>© Copyright I&Others @DateTime.Now.Year</span> 
+		         	<span>Design by <a href="http://www.iandothers.com/">I&Others</a></span>		         	
+		         </div>
+		         <div id="go-top">
+		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon icon-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+      	</div> 
+      </div> <!-- end footer-bottom -->  
+   </footer>  
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div>
+
+
+
+
+    <script src="~/js/jquery-2.1.3.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/jquery.appear.js"></script>
+    <script src="~/js/main.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

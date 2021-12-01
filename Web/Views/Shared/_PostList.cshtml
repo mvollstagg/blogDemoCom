@@ -1,35 +1,28 @@
-﻿@using Data.Domain
-@model PagedList.Core.PagedList<Data.Domain.Post>
+﻿
+@model IEnumerable<Data.Domain.Post>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-
-  <h1 class="my-4">Blog Demo
-    <small>.Net Core 3.1 MVC Blog Projesi</small>
-  </h1>
-
-  <!-- Blog Post -->
-  @foreach (var item in Model)
-  {                                   
-    <div class="card mb-4">
-      <img height="300px" width="750px" class="card-img-top" src="~/postImages/@(item.Image)" alt="Card image cap">
-      <div class="card-body">
-        <h2 class="card-title">@item.Title</h2>
-        <p class="card-text">@Html.Raw(item.Content)</p>
-        <a href="/Home/Post/@item.Id" class="btn btn-primary">Postu Oku! &rarr;</a>
+@foreach (var item in Model)
+{
+    <article class="brick entry format-standard animate-this">
+      <div class="entry-thumb">
+          <a asp-action="BlogItem" asp-route-id="@item.Id" class="thumb-link">
+              <img src="~/postImages/@(item.Image)" alt="building">             
+          </a>
       </div>
-      <div class="card-footer text-muted">
-        Posted on @item.CreateTime by
-        <a href="#">@item.AuthorId</a>
+      <div class="entry-text">
+          <div class="entry-header">
+              <div class="entry-meta">
+                  <span class="cat-links">
+                      <a href="#">@item.AuthorName</a> 
+                      <a href="#">@item.UpdateTime.ToString("dd.MM.yyyy hh:mm tt")</a>               				
+                  </span>			
+              </div>
+              <h1 class="entry-title"><a asp-action="BlogItem" asp-route-id="@item.Id">@item.Title</a></h1>               		
+          </div>
+            <div class="entry-excerpt">
+                @Html.Raw((item.Content.Length > 250 ? item.Content.Substring(0, 250) : item.Content)) ...
+            </div>
       </div>
-    </div>
-  }
-
-
-  <!-- Pagination -->
-  <div class="row">
-    <div class="col-xs-12 sayfalama">
-        <div class="sayfalama-bilgi">Toplam <span>@Model.TotalItemCount</span> Kayıt Bulunuyor. Şu anda <span>@Model.FirstItemOnPage</span> - <span>@Model.LastItemOnPage</span> Arasındaki Kayıtlar Gösteriliyor. </div>
-        <pager list="@Model" asp-controller="Home" options="@PagedList.Core.Mvc.PagedListRenderOptions.Bootstrap4PageNumbersOnly" asp-action="Index" />
-    </div>
-  </div>
-
+  </article>
+}

@@ -1,13 +1,22 @@
 ﻿@using Data.Domain
-@model PagedList.Core.PagedList<Data.Domain.Post>
+@model IEnumerable<Data.Domain.Post>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="col-md-8">
+@* <div class="col-md-8">
 <div id="postList">
     @Html.Partial("~/views/Shared/_PostList.cshtml", Model)
 </div>
-</div>
+</div> *@
+
+<section id="bricks">
+   	<div class="row masonry">
+         <div class="bricks-wrapper">
+         	<div class="grid-sizer"></div>
+             @{ await Html.RenderPartialAsync("_PostList", Model); }             
+         </div>
+   	</div>
+</section>

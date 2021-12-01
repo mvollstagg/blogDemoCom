@@ -130,8 +130,6 @@
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/Microsoft.Web.Infrastructure.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/PagedList.Core.dll
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/PagedList.Core.Mvc.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
@@ -149,7 +147,6 @@
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.AssemblyInfoInputs.cache
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.AssemblyInfo.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.csproj.CoreCompileInputs.cache
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.MvcApplicationPartsAssemblyInfo.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.MvcApplicationPartsAssemblyInfo.cache
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.RazorAssemblyInfo.cache
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.RazorAssemblyInfo.cs
@@ -164,13 +161,8 @@
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/PostEdit.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/PostSettings.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/AdminPanel/Settings.cshtml.g.cs
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/AddPost.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Login.cshtml.g.cs
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Post.cshtml.g.cs
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Register.cshtml.g.cs
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Search.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_AdminPanelLayout.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Footer.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/AdminPanel/_Header.cshtml.g.cs
@@ -179,7 +171,6 @@
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Header.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_PostList.cshtml.g.cs
-/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Sidebar.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
@@ -190,3 +181,5 @@
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.pdb
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Web.genruntimeconfig.cache
+/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/GetFilter.cshtml.g.cs
+/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/BlogItem.cshtml.g.cs

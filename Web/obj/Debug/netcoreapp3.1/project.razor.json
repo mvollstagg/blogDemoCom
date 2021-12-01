@@ -12432,82 +12432,6 @@
         }
       },
       {
-        "HashCode": 1978103069,
-        "Kind": "ITagHelper",
-        "Name": "PagedList.Core.Mvc.PagerTagHelper",
-        "AssemblyName": "PagedList.Core.Mvc",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "pager"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "ITagHelper",
-            "Name": "list",
-            "TypeName": "PagedList.Core.IPagedList",
-            "Metadata": {
-              "Common.PropertyName": "List"
-            }
-          },
-          {
-            "Kind": "ITagHelper",
-            "Name": "asp-all-route-data",
-            "TypeName": "System.Collections.Generic.IDictionary<System.String, System.String>",
-            "IndexerNamePrefix": "asp-route-",
-            "IndexerTypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "RouteValues"
-            }
-          },
-          {
-            "Kind": "ITagHelper",
-            "Name": "asp-action",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "AspAction"
-            }
-          },
-          {
-            "Kind": "ITagHelper",
-            "Name": "asp-controller",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "AspController"
-            }
-          },
-          {
-            "Kind": "ITagHelper",
-            "Name": "asp-area",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "AspArea"
-            }
-          },
-          {
-            "Kind": "ITagHelper",
-            "Name": "options",
-            "TypeName": "PagedList.Core.Mvc.PagedListRenderOptions",
-            "Metadata": {
-              "Common.PropertyName": "Options"
-            }
-          },
-          {
-            "Kind": "ITagHelper",
-            "Name": "param-page-number",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "ParamPageNumber"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "PagedList.Core.Mvc.PagerTagHelper"
-        }
-      },
-      {
         "HashCode": -482054960,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14503,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/GetFilter.cshtml",
+      "TargetPath": "Views\\Home\\GetFilter.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Shared/AdminPanel/_Sidebar.cshtml",
       "TargetPath": "Views\\Shared\\AdminPanel\\_Sidebar.cshtml",
       "FileKind": "mvc"
@@ -14513,11 +14442,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/Post.cshtml",
-      "TargetPath": "Views\\Home\\Post.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/AdminPanel/Settings.cshtml",
       "TargetPath": "Views\\AdminPanel\\Settings.cshtml",
       "FileKind": "mvc"
@@ -14525,6 +14449,11 @@
     {
       "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Shared/AdminPanel/_Header.cshtml",
       "TargetPath": "Views\\Shared\\AdminPanel\\_Header.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/BlogItem.cshtml",
+      "TargetPath": "Views\\Home\\BlogItem.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14553,23 +14482,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Shared/_Sidebar.cshtml",
-      "TargetPath": "Views\\Shared\\_Sidebar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Shared/AdminPanel/_Footer.cshtml",
       "TargetPath": "Views\\Shared\\AdminPanel\\_Footer.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/AddPost.cshtml",
-      "TargetPath": "Views\\Home\\AddPost.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/Register.cshtml",
-      "TargetPath": "Views\\Home\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14583,18 +14497,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/Search.cshtml",
-      "TargetPath": "Views\\Home\\Search.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Shared/_Header.cshtml",
       "TargetPath": "Views\\Shared\\_Header.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Web/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     }
   ],

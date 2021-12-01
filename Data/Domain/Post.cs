@@ -12,11 +12,10 @@ namespace Data.Domain
         [AllowHtml]
         public string Content { get; set; }
         public string Image { get; set; }
-        public DateTime CreateTime { get; set; }
-        public DateTime UpdateTime { get; set; }
+        public DateTime CreateTime { get; set; } = DateTime.Now;
+        public DateTime UpdateTime { get; set; } = DateTime.Now;
         public bool Status { get; set; }
-        public int AuthorId { get; set; }  
-        public string CategoryName { get; set; }      
+        public string AuthorName { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/Users/matthieuvollstagg/.dotnet/store/|arch|/|tfm|",
-      "/Users/matthieuvollstagg/.nuget/packages"
+      "C:\\Users\\TecnicoTiempo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\TecnicoTiempo\\.nuget\\packages"
     ]
   }
 }

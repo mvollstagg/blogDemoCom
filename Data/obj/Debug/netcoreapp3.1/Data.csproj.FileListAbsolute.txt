@@ -22,3 +22,16 @@
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/obj/Debug/netcoreapp3.1/Data.dll
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/obj/Debug/netcoreapp3.1/Data.pdb
 /Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/obj/Debug/netcoreapp3.1/Data.genruntimeconfig.cache
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.json
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.dev.json
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\bin\Debug\netcoreapp3.1\Data.dll
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\bin\Debug\netcoreapp3.1\Data.pdb
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.csproj.AssemblyReference.cache
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.GeneratedMSBuildEditorConfig.editorconfig
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.dll
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.pdb
+G:\Users\GTA\Documents\Github\blogDemoCom\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache

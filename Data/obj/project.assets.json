@@ -5149,24 +5149,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/matthieuvollstagg/.nuget/packages/": {}
+    "C:\\Users\\TecnicoTiempo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/Data.csproj",
+      "projectUniqueName": "G:\\Users\\GTA\\Documents\\Github\\blogDemoCom\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/Data.csproj",
-      "packagesPath": "/Users/matthieuvollstagg/.nuget/packages/",
-      "outputPath": "/Users/matthieuvollstagg/Documents/GitHub/blogDemoCom/Data/obj/",
+      "projectPath": "G:\\Users\\GTA\\Documents\\Github\\blogDemoCom\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\TecnicoTiempo\\.nuget\\packages\\",
+      "outputPath": "G:\\Users\\GTA\\Documents\\Github\\blogDemoCom\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/matthieuvollstagg/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\TecnicoTiempo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5229,7 +5231,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
